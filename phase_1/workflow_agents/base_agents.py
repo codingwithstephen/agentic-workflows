@@ -336,7 +336,6 @@ class ActionPlanningAgent:
 
     # Matches leading list markers: "1.", "2)", "-", "*", "Step 3:" etc.
     _MARKER = re.compile(r"^(?:step\s*\d+\s*[:.)-]?|\d+\s*[.)-]|[-*•])\s*", re.IGNORECASE)
-    _PREAMBLE = ("here are", "steps:", "the steps", "below are")
 
     def __init__(self, openai_api_key, knowledge, client=None, chat_model=CHAT_MODEL):
         self.openai_api_key = openai_api_key
@@ -367,10 +366,11 @@ class ActionPlanningAgent:
 
         steps = []
         for raw_line in raw.splitlines():
-            line = self._MARKER.sub("", raw_line.strip()).strip()
-            if not line:
-                continue
-            if line.lower().startswith(self._PREAMBLE):
-                continue
-            steps.append(line)
+            stripped = raw_line.strip()
+            match = self._MARKER.match(stripped)
+            if not match:
+                continue  # not an actual list item — a preamble/header line
+            line = stripped[match.end():].strip()
+            if line:
+                steps.append(line)
         return steps

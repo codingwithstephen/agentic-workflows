@@ -23,10 +23,10 @@ Worker Agent Response:
 London.
  Step 2: Evaluator agent judges the response
 Evaluator Agent Evaluation:
-Yes, the answer "London" meets the criteria as it is solely the name of a city without any additional information.
+Yes, the answer "London" meets the criteria as it is solely the name of a city.
 Final solution accepted.
 
 === Final Result ===
 Final response: London.
-Evaluation: Yes, the answer "London" meets the criteria as it is solely the name of a city without any additional information.
+Evaluation: Yes, the answer "London" meets the criteria as it is solely the name of a city.
 Iterations: 2
