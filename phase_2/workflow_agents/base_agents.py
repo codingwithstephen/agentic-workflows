@@ -15,8 +15,8 @@ import numpy as np
 import pandas as pd
 from openai import OpenAI
 
-CHAT_MODEL = "gpt-4.1-nano"
-EMBEDDING_MODEL = "text-embedding-3-small"
+CHAT_MODEL = "gpt-3.5-turbo"
+EMBEDDING_MODEL = "text-embedding-3-large"
 
 
 class WorkerAgent(Protocol):

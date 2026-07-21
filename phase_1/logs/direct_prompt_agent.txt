@@ -1,0 +1,3 @@
+The capital of France is Paris.
+
+Knowledge source: the answer comes entirely from gpt-3.5-turbo's own training data (parametric knowledge); the agent added no external context.

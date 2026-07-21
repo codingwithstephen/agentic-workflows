@@ -21,4 +21,6 @@ corpus = (
 rag_agent.chunk_text(corpus)
 rag_agent.calculate_embeddings()
 
-print(rag_agent.find_prompt_in_knowledge("Who founded the American Red Cross and when?"))
+prompt = "Who founded the American Red Cross and when?"
+print(f"Prompt: {prompt}\n")
+print(rag_agent.find_prompt_in_knowledge(prompt))
