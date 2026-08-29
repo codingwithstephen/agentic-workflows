@@ -1,0 +1,39 @@
+name: Task
+description: Standard task/feature template with acceptance criteria
+title: "[Task]: "
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Brief description of the issue
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Additional context, background, or details
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the conditions that must be met for this to be considered done. Add/remove lines as needed — each renders as a checkbox you can tick off.
+      value: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
